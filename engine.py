@@ -7,7 +7,7 @@ class Validator:
         self.y = y
 
 
-    def verify_horizontally(map, x, y):
+    def verify_horizontally(self, map, x, y):
         flag = False
         for i in range(x):
             for j in range(y - 1):
@@ -23,7 +23,7 @@ class Validator:
         return False
 
 
-    def verify_vertically(map, x, y):
+    def verify_vertically(self, map, x, y):
         flag = False
         for j in range(y):
             for i in range(x - 1):
@@ -39,7 +39,7 @@ class Validator:
                 return True
         return False
 
-    def verify_diagonal_one(map, x, y):
+    def verify_diagonal_one(self, map, x, y):
         valid_counter = 0
         for i in range(y):
             for j in range(x):
@@ -50,7 +50,7 @@ class Validator:
                     return True
         return False
 
-    def verify_diagonal_two(map, x, y):
+    def verify_diagonal_two(self, map, x, y):
         valid_counter_two = 0
         for i in range(y - 1):
             for j in range(x - 1, 0, -1):
@@ -60,39 +60,39 @@ class Validator:
                     return True
         return False
 
-    def validate(map):
+    def validate(self):
 
         x = len(map)
-        y = len(map[0])
+        y = len(map)
 
 
-        if Validator.verify_horizontally(map, x, y):
+        if self.verify_horizontally(map, x, y):
             print('horizontally true')
             return True
 
-        elif Validator.verify_vertically(map, x, y):
+        elif self.verify_vertically(map, x, y):
             print("vertically true)")
             return True
 
-        elif Validator.verify_diagonal_one(map, x ,y):
+        elif self.verify_diagonal_one(map, x ,y):
             print('diagonal one true')
             return True
 
-        elif Validator.verify_diagonal_two(map, x, y):
+        elif self.verify_diagonal_two(map, x, y):
             print("diagonal two true")
             return True
 
         else:
             return False
 
-        validator_one = Validator()
+
 
 if __name__ == "__main__":
 
 
     map = [[' ' for i in range(3)] for j in range(3)]
 
-
+    validator_one = Validator(map, 3, 3)
 
     map[0][2] = ' '
     map[0][1] = ' '
@@ -102,6 +102,7 @@ if __name__ == "__main__":
     map[2][2] = 'o'
     for list in map:
         print(list)
+    print(validator_one.validate())
 
 
 
