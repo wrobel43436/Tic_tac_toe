@@ -85,6 +85,8 @@ class Validator:
         else:
             return False
 
+        validator_one = Validator()
+
 if __name__ == "__main__":
 
 
@@ -100,7 +102,6 @@ if __name__ == "__main__":
     map[2][2] = 'o'
     for list in map:
         print(list)
-    print(Validator.validate(map))
 
 
 
