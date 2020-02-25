@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
 
    map_graphic = create_graphic_map(z, z)
-   map_validator = [[' ' for i3 in range(z)] for j in range(v)]
+   map_validator = [[' ' for i in range(z)] for j in range(v)]
    validator = Validator(map_validator)
 
 
